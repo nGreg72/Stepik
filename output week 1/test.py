@@ -10,16 +10,17 @@ import os
 #
 # startRename()
 
-baseDir = 'C:/Temp/'
+baseDir = '/home/greg/'
 # bd = filter(os.path.isdir, os.listdir(baseDir))
 
-directories = filter(os.path.isdir, os.listdir(baseDir))
-for d in directories:
-    print(d)
+# directories = filter(os.path.isdir, os.listdir(baseDir))
+#
+# print("CurDir : ", os.path.isdir(baseDir))
+#
+# for d in directories:
+#     print("AAA", baseDir)
 
-# for ls in directories:
-
-    # if os.path.isdir(fn):
-    #     print()
-        # continue
-    # else:
+for ls in os.listdir(baseDir):
+    # print(baseDir + ls)
+    if os.path.isdir(baseDir + ls):
+        print(baseDir + ls)
