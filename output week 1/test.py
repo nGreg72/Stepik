@@ -1,5 +1,7 @@
 import os
 
+pattern = "(-NID\d+-\d+)"
+
 # def startRename():
 #     directory = f"{os.getcwd()}\\"
 #     directory1 = directory.replace('/', '\\')
@@ -10,7 +12,7 @@ import os
 #
 # startRename()
 
-baseDir = '/home/greg/'
+baseDir = 'C:/temp/'
 # bd = filter(os.path.isdir, os.listdir(baseDir))
 
 # directories = filter(os.path.isdir, os.listdir(baseDir))
