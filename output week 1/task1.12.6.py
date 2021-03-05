@@ -1,20 +1,18 @@
-# a = int(input())
+# n = int(input())
+n = 21
 
 base_word = "программист"
 x = "а"
 y = "ов"
 
-gen = list(range(1000))
-c = 22
-
-if c == 1:
-    print(base_word)
-elif 2 <= c <= 4:
-    print(base_word + x)
-elif 5 <= c <= 9 or c == 0:
+if n in (0, 5, 6, 7, 8, 9, 10) or n % 100 == 11:
     print(base_word + y)
+elif not n % 100 == 11:
+    print(base_word + x)
+else:
+    print(base_word)
 
-print(gen)
+
 
 """if month == 1:
     template = re.sub(r"month", "год", template)
