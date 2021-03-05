@@ -1,18 +1,17 @@
 import re
 
-file = open("store_d.txt", "r+", encoding="utf-8")
-lines = file.readlines()
+with open("new_file", "a") as new_file:
+    file = open("store_d.txt", "r")
+    lines = file.readlines()
 
-pattern = "-NID.+"
+    pattern = "-NID.+"
 
-x = []
+    new_db = []
+    for ln in lines:
+        if "title" and "NID" in ln:
+            tmp = re.sub(pattern, '', ln)
+            new_file.write(tmp)
+        else:
+            new_file.write(ln)
 
-for ln in lines :
-    if "title" and "NID" in ln:
-        w = re.sub(pattern, '', ln)
-        x.append(w)
-        # print(w)
-
-file.close()
-
-print(x)
+    file.close()
