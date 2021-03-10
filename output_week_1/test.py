@@ -27,26 +27,14 @@ baseDir = 'C:/temp/'
 
 
 import hashlib
-import subprocess
-#
-# def md5checksum(fname):
-#
-#     md5 = hashlib.md5()
-#
-#     f = open(fname, "rb")
-#
-#     while chunk := f.read(4096):
-#         md5.update(chunk)
-#
-#         return md5.hexdigest()
-#
-# result = md5checksum("C:/Users/nGreg\Dropbox/PycharmProjects/Stepik/output_week_1/fixDB.py")
-# print(result)
 
-with open("C:/Users/nGreg\Dropbox/PycharmProjects/Stepik/output_week_1/fixDB.py", "rb") as f:
-    md5 = hashlib.md5(f.read())
-print(md5.hexdigest())
+with open("C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/output_week_1/store_d.txt", 'rb') as file:
+    a = file.read()
+    b = hashlib.md5(a).hexdigest()
+print(b)
 
-programm = "C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/md5sum.exe"
-argument = "C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/output_week_1/store_d.txt"
-subprocess.call([programm, argument])
+# def file_as_bytes(file):
+#     with file:
+#         return file.read()
+# print(hashlib.md5(file_as_bytes(open("C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/output_week_1/store_d.txt", 'rb'))).hexdigest())
+

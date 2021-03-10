@@ -14,24 +14,20 @@ with open(writefile, "a", encoding="utf-8") as new_file:
     for ln in lines:
         if "\"title\"" in ln and "NID" in ln:
             tmp = re.sub(pattern, '\"', ln)
-            print(ln)
-            print(tmp)
-        #     new_file.write(tmp)
-        # else:
-        #     new_file.write(ln)
+            # print(ln)
+            # print(tmp)
+            new_file.write(tmp)
+        else:
+            new_file.write(ln)
 
     file.close()
 
-def md5checksum(fname):
 
-    md5 = hashlib.md5()
+def file_as_bytes(file):
+    with file:
+        return file.read()
 
-    f = open(fname, "rb")
+hash_summ = hashlib.md5(file_as_bytes(open("C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/output_week_1/store_d.txt", 'rb'))).hexdigest()
 
-    while chunk := f.read(4096):
-        md5.update(chunk)
-
-        return md5.hexdigest()
-
-result = md5checksum(readfile)
-print(result)
+with open(writefile + ".md5", "w") as new_md:
+    new_md.write(hash_summ)
