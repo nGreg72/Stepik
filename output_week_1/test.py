@@ -1,5 +1,3 @@
-import os
-
 pattern = "(-NID\d+-\d+)"
 
 # def startRename():
@@ -22,7 +20,33 @@ baseDir = 'C:/temp/'
 # for d in directories:
 #     print("AAA", baseDir)
 
-for ls in os.listdir(baseDir):
-    # print(baseDir + ls)
-    if os.path.isdir(baseDir + ls):
-        print(baseDir + ls)
+# for ls in os.listdir(baseDir):
+#     # print(baseDir + ls)
+#     if os.path.isdir(baseDir + ls):
+#         print(baseDir + ls)
+
+
+import hashlib
+import subprocess
+#
+# def md5checksum(fname):
+#
+#     md5 = hashlib.md5()
+#
+#     f = open(fname, "rb")
+#
+#     while chunk := f.read(4096):
+#         md5.update(chunk)
+#
+#         return md5.hexdigest()
+#
+# result = md5checksum("C:/Users/nGreg\Dropbox/PycharmProjects/Stepik/output_week_1/fixDB.py")
+# print(result)
+
+with open("C:/Users/nGreg\Dropbox/PycharmProjects/Stepik/output_week_1/fixDB.py", "rb") as f:
+    md5 = hashlib.md5(f.read())
+print(md5.hexdigest())
+
+programm = "C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/md5sum.exe"
+argument = "C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/output_week_1/store_d.txt"
+subprocess.call([programm, argument])
