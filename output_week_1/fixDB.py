@@ -22,12 +22,8 @@ with open(writefile, "a", encoding="utf-8") as new_file:
 
     file.close()
 
-
-def file_as_bytes(file):
-    with file:
-        return file.read()
-
-hash_summ = hashlib.md5(file_as_bytes(open("C:/Users/nGreg/Dropbox/PycharmProjects/Stepik/output_week_1/store_d.txt", 'rb'))).hexdigest()
-
 with open(writefile + ".md5", "w") as new_md:
-    new_md.write(hash_summ)
+    f = open(readfile, "rb")
+    a = f.read()
+    b = hashlib.md5(a).hexdigest()
+    new_md.write(b)
